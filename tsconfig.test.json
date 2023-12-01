@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "lib": ["ES2020", "ESNext", "DOM", "ES2021.String"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "lib", "dist"]
+}

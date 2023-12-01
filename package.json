@@ -1,0 +1,70 @@
+{
+  "name": "@woltair/qa-fe",
+  "version": "2.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/woltair/qa-fe.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "files": [
+    "/dist",
+    "/src"
+  ],
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "format": "eslint --ext .ts,.js,.svelte . --fix --ignore-path .gitignore && prettier \"**/*.{ts,js,html,css,svelte,json}\" --write --ignore-path .gitignore",
+    "lint": "eslint --ext .ts,.js,.svelte . --ignore-path .gitignore && prettier \"**/*.{ts,js,html,css,svelte,json}\" --check --ignore-path .gitignore",
+    "prepare": "husky install",
+    "prepublishOnly": "tsc --noEmit && npm run build && publint"
+  },
+  "lint-staged": {
+    "*.{js,ts,svelte}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,html,json}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": "@woltair/prettier-config-fe",
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/@woltair/eslint-config-fe"
+    ],
+    "root": true
+  },
+  "dependencies": {
+    "@playwright/test": "^1.37.1",
+    "@types/chance": "^1.1.4",
+    "chance": "^1.1.11"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@woltair/eslint-config-fe": "^0.2.0",
+    "@woltair/prettier-config-fe": "^0.3.1",
+    "@woltair/tsconfig-fe": "^0.2.0",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.48.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "publint": "^0.2.2",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.dev.woltair.dev/"
+  }
+}
