@@ -92,7 +92,7 @@ test('Test data provider example - iterate over all data in dataset', async ({})
 ```
 
 ## dto / commonTypes
-Library of common types. All Enums, Types or Interfaces which are expected to be used across the whole of woltair applications
+Library of common types. All Enums, Types or Interfaces which are expected to be used across the whole of company applications
 should be declared here. If it is not immediatelly obvious, that a type is common, it can be declared localy. However if it is used
 outside of module at least once, it should be moved to common library immediatelly.
 
