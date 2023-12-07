@@ -51,7 +51,7 @@ export class CallMeBackStep1POM extends POM {
   }
 
   async navigate(): Promise<void> {
-    const testUrl = PropertiesManager.getProperty('PLAYWRIGHT_BASE_URL') + '/zanechejte-kontakt'
+    const testUrl = PropertiesManager.getProperty('WEB_BASE_URL_CZ') + '/zanechejte-kontakt'
     await this.page.goto(testUrl)
   }
 
