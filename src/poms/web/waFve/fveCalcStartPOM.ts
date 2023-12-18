@@ -52,6 +52,6 @@ export class FveCalcStartPOM extends POM {
 
   async selectFve() {
     await this.fveCalcBtn.click()
-    await this.fveCalcStartTitle.waitToDisappear()
+    await this.fveCalcStartTitle.waitToDisappear(10000)
   }
 }

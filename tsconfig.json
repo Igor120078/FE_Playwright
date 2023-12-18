@@ -6,5 +6,10 @@
     "esModuleInterop": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js"]
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.ts",
+    "src/**/*.js",
+    "tests/web/testDataObjects.ts"
+  ]
 }

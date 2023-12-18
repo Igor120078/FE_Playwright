@@ -2,18 +2,18 @@
 import type { Page } from '@playwright/test'
 import { POM } from '../../pom'
 import { ComponentFactory } from '../../../components/factory/componentFactory'
-import { PropertiesManager } from '../../../utils/propertiesManager/propertiesManager'
+// import { PropertiesManager } from '../../../utils/propertiesManager/propertiesManager'
 import type { ButtonInterface } from '../../../components/interfaces/buttonInterface'
 import type { LabelInterface } from '../../../components/interfaces/labelInterface'
+import dotenv from 'dotenv'
+dotenv.config()
 
 export class HomePagePOM extends POM {
   private homePageHeading: LabelInterface
   private homePageSubheading: LabelInterface
   private homePageReferencesHeading: LabelInterface
   private homePageReferencesSubtext: LabelInterface
-  // Calculator section
   private homePageCalcBtn: ButtonInterface
-  // CallMe section
   private callMeBtn: ButtonInterface
 
   constructor(page: Page) {
@@ -47,7 +47,8 @@ export class HomePagePOM extends POM {
   }
 
   async navigate(): Promise<void> {
-    const testUrl = PropertiesManager.getProperty('WEB_BASE_URL_CZ') + '/?translationsShowKeys'
+    // const testUrl = PropertiesManager.getProperty('WEB_BASE_URL_CZ') + '/?translationsShowKeys'
+    const testUrl = `${process.env.PLAYWRIGHT_BASE_URL_CZ}/?translationsShowKeys`
     await this.page.goto(testUrl)
   }
 
