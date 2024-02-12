@@ -53,7 +53,7 @@ export class HomePagePOM extends POM {
   }
 
   // Tohle je berle pro zviditelneni translations keys
-  async makeAllTranslationsKeysVisible() {
+  async makeAllTranslationsKeysVisible(): Promise<void> {
     await this.page.getByTestId('page-link-hvac').click()
     await this.page.getByTestId('calculator').waitFor()
     await this.goBack()
@@ -72,10 +72,10 @@ export class HomePagePOM extends POM {
     await this.callMeBtn.validateSelf()
   }
 
-  async startCallMeForm() {
+  async startCallMeForm(): Promise<void> {
     await this.callMeBtn.click()
   }
-  async startCalculator() {
+  async startCalculator(): Promise<void> {
     await this.homePageCalcBtn.click()
   }
 }
