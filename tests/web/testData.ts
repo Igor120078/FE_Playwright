@@ -1,9 +1,10 @@
 export class TestData {
+  private countryCode: string
+  private timeId = Date.now()
+
   constructor(countryCode: string) {
     this.countryCode = countryCode
   }
-  private countryCode: string
-  private timeId = Date.now()
 
   private emails = {
     CZ: [`test${this.timeId}@test.cz`, `test${this.timeId}@woltair.cz`, `autotest${this.timeId}@woltair.cz`],
@@ -39,9 +40,7 @@ export class TestData {
       _countryCode = 'XX'
     }
     _data = data[_countryCode as keyof typeof data]
-    let min = 1
-    let max = _data.length - 1
-    let i = Math.floor(Math.random() * (max - min + 1)) + min
+    let i = Math.floor(Math.random() * _data.length)
     return _data[i]
   }
 

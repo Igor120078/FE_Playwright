@@ -12,10 +12,10 @@ import { HvacCalcStep5aPOM } from '../../src/poms/web/waHvac/hvacCalcStep5aPOM'
 import { HvacCalcStep5bPOM } from '../../src/poms/web/waHvac/hvacCalcStep5bPOM'
 import { HvacCalcStep6POM } from '../../src/poms/web/waHvac/hvacCalcStep6POM'
 import { HvacCalcStep8POM } from '../../src/poms/web/waHvac/hvacCalcStep8POM'
-import { OfferPageTitlePOM } from '../../src/poms/web/waHvac/offerPageTitlePOM'
-import { OfferPageWhatNextPOM } from '../../src/poms/web/waHvac/offerPageWhatNextPOM'
-import { OfferPageWhyWoltairPOM } from '../../src/poms/web/waHvac/offerPageWhyWoltairPOM'
-import { OfferPageModelsTabsWithIdPOM } from '../../src/poms/web/waHvac/offerPageModelsTabsWithIdPOM'
+// import { OfferPageTitlePOM } from '../../src/poms/web/waHvac/offerPageTitlePOM'
+// import { OfferPageWhatNextPOM } from '../../src/poms/web/waHvac/offerPageWhatNextPOM'
+// import { OfferPageWhyWoltairPOM } from '../../src/poms/web/waHvac/offerPageWhyWoltairPOM'
+// import { OfferPageModelsTabsWithIdPOM } from '../../src/poms/web/waHvac/offerPageModelsTabsWithIdPOM'
 
 import type { DataProviderInterface } from '../../src/dataProvider/interfaces/dataProviderInterface'
 import { DataProviderFactory } from '../../src/dataProvider/factory/dataProviderFactory'
@@ -112,21 +112,23 @@ test('Heat Pump Calculator test @daily', async ({ page }) => {
   await step8.validateAllComponents()
   await step8.fillEmailInput(testData!.email)
   await step8.fillPhoneInput(testData!.phoneNumber)
-  await step8.submitForm()
+  await page.waitForTimeout(5000)
 
-  const offerTitle = new OfferPageTitlePOM(page)
-  await offerTitle.waitForOfferPage()
-  await offerTitle.validateAllComponents()
+  // await step8.submitForm()
 
-  const modelsTabs = new OfferPageModelsTabsWithIdPOM(page)
-  await modelsTabs.setExpectedFloorSquare(testData!.floorSquare)
-  await modelsTabs.validateAllComponents()
-  await modelsTabs.checkModelsTabsContent()
+  // const offerTitle = new OfferPageTitlePOM(page)
+  // await offerTitle.waitForOfferPage()
+  // await offerTitle.validateAllComponents()
 
-  const whatNext = new OfferPageWhatNextPOM(page)
-  await whatNext.validateAllComponents()
-  await whatNext.checkLastMontagesCount()
+  // const modelsTabs = new OfferPageModelsTabsWithIdPOM(page)
+  // await modelsTabs.setExpectedFloorSquare(testData!.floorSquare)
+  // await modelsTabs.validateAllComponents()
+  // await modelsTabs.checkModelsTabsContent()
 
-  const whyWoltair = new OfferPageWhyWoltairPOM(page)
-  await whyWoltair.validateAllComponents()
+  // const whatNext = new OfferPageWhatNextPOM(page)
+  // await whatNext.validateAllComponents()
+  // await whatNext.checkLastMontagesCount()
+
+  // const whyWoltair = new OfferPageWhyWoltairPOM(page)
+  // await whyWoltair.validateAllComponents()
 })

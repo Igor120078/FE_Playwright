@@ -3,7 +3,7 @@ import { Locator, Page, expect } from '@playwright/test'
 import { HeatSources } from './enums/heatSourceEnum'
 
 export class HvacCalcStep1POM {
-  readonly page: Page
+  private page: Page
   private hvacCalcMetaTitle: Locator
   private houseHeatingCoal: Locator
   private houseHeatingCoal1: Locator

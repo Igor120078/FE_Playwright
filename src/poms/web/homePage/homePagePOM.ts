@@ -48,7 +48,7 @@ export class HomePagePOM extends POM {
 
   async navigate(): Promise<void> {
     // const testUrl = PropertiesManager.getProperty('WEB_BASE_URL_CZ') + '/?translationsShowKeys'
-    const testUrl = `${process.env.PLAYWRIGHT_BASE_URL_CZ}/?translationsShowKeys`
+    const testUrl = `${process.env.WEB_BASE_URL_CZ}/?translationsShowKeys`
     await this.page.goto(testUrl)
   }
 
