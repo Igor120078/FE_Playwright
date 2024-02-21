@@ -12,18 +12,22 @@ export class DataFactory {
       .setCharacterBase('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')
       .setLength(5)
   }
+
   static alphaNumericAndSpecialString(): StringPattern {
     return new StringPattern()
       .setCharacterBase('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')
       .extendCharacterBase('!?<>_-.,:/\\')
       .setLength(5)
   }
+
   static integer(): IntegerPattern {
     return new IntegerPattern().setMin(0).setMax(100)
   }
+
   static decimal() {
     return new DecimalPattern().setMin(0).setMax(100).setPrecission(2)
   }
+
   static phoneNumberCZ(): PhonePattern {
     return new PhonePattern()
       .setCountryPrefix(CountryPhonePrefix.CZ)

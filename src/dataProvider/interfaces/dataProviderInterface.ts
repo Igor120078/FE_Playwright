@@ -25,7 +25,7 @@ export interface DataProviderInterface<C> {
    */
   getCurrent(): C | null
   /**
-   * Restarts the poiter to current item for sequential object
+   * Restarts the pointer to current item for sequential object
    * fetching - see {@link getNext()}
    */
   resetReader(): void
